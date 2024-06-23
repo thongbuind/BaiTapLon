@@ -24,8 +24,12 @@ struct manage {
 void menu_0();
 void menu_main();
 void yesno_question(string, int&);
-void check_regex (string, string, string&);
 int change_input_main (string);
+// Làm cho zui
+void nidai_assistant (product[], int&, int&, int&, manage[], int&, string, int&, int&);
+int check_oders (string);
+int check_yes_no (string);
+void check_regex (string, string, string&);
 // Khai báo các hàm của Thành
 
 // Khai báo các hàm của Long
