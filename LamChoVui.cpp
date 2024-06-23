@@ -32,7 +32,7 @@ void nidai_assistant (product p[], int& count, int& money_out, int& money_in, ma
                     getline(cin, q);
                     check_regex("danh sach", q, q_regex);
                     if (q_regex == "danh sach") {
-                        // dung ham tra cuu danh sach
+                        tra_cuu_danh_sach(count, p);
                         q = "ok, cam on";
                         // nếu rảnh sẽ nâng cấp
                     } else if (q_regex == "vi tri") {
@@ -47,7 +47,7 @@ void nidai_assistant (product p[], int& count, int& money_out, int& money_in, ma
                         cout << "You: ";
                         getline(cin, name);
                         check_regex("name", name, name_regex);
-                        // dung ham tra cuu vi tri
+                        tra_cuu_vi_tri(name_regex, count, p, y, x, check);
                         if (check==1) {
                             cout << setw(50) << right << "🤖ニダイ" << endl;
                             cout << setw(44) << right << "San pham o vi tri: " << y << x << endl;
@@ -137,7 +137,7 @@ void nidai_assistant (product p[], int& count, int& money_out, int& money_in, ma
                         }
                     } while (price <= 0 || cin.fail());
                     cin.ignore(100, '\n');
-                    // dung ham them
+                    them(name, quantity, price, count, p, check_them_kho, money_out, m, index_manage, name_staff_tmp, number_in);
                     cout << setw(50) << right << "🤖ニダイ" << endl;
                     cout << setw(46) << right << "San pham da duoc them vao kho" << endl;
                 }
@@ -287,7 +287,7 @@ void nidai_assistant (product p[], int& count, int& money_out, int& money_in, ma
                                 }
                             } while (quantity <= 0 || cin.fail());
                             cin.ignore();
-                            // dung ham them
+                            them(name_regex, quantity, price, count, p, check_name, money_out, m, index_manage, name_staff_tmp, number_in);
                             cout << setw(50) << right << "🤖ニダイ" << endl;
                             cout << setw(46) << right << "Them moi thanh cong" << endl;
                         } else if (check_yes_no(q) == 0) {
@@ -350,7 +350,7 @@ void nidai_assistant (product p[], int& count, int& money_out, int& money_in, ma
                     } while (check[i] != 1);
                 }
                 cout << setw(50) << right << "🤖ニダイ" << endl;
-                // dung ham tinh toan, cout ra so tien
+                cout << setw(36) << right << "Thanh tien: " << tinh_toan(name_regex, quantity, index, count, p) << " VND" << endl;
                 cin.ignore();
                 break;
             }

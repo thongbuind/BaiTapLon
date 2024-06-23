@@ -2,15 +2,16 @@
 #include "header.h"
 
 int main() {
-    product p[100];
     manage m[100];
-    p[0] = {"sach giai tich", 19, 3000};
-    p[1] = {"sach vat ly", 15, 23000};
-    p[2] = {"sach tin hoc", 17, 20000};
-    p[3] = {"cap sach", 16, 300000};
-    p[4] = {"ao dong phuc", 61, 150000};
-    p[5] = {"quan dong phuc", 61, 110000};
-    p[6] = {"may chieu", 7, 1100000};
+    struct product p[100] = {
+        {"sach giai tich", 19, 3000},
+        {"sach vat ly", 15, 23000},
+        {"sach tin hoc", 17, 20000},
+        {"cap sach", 16, 300000},
+        {"ao dong phuc", 61, 150000},
+        {"quan dong phuc", 61, 110000},
+        {"may chieu", 7, 1100000}
+    };
     int count = 7;
     int index_manage = 0;
     int number_in = 0;
@@ -51,13 +52,11 @@ int main() {
                     } while (option_main == 0);
                     switch (option_main) {
                         case 1: {
-                            // dùng hàm tính năng tra cứu
-                            cout << "Tinh nang tra cuu";
+                            tinh_nang_tra_cuu(p, count);
                             break;
                         }
                         case 2: {
-                            // dùng hàm tính năng thêm
-                            cout << "Tinh nang them";
+                            tinh_nang_them(p, m, index_manage, number_in, money_out, count, name_staff_tmp);
                             break;
                         }
                         case 3: {
@@ -71,13 +70,11 @@ int main() {
                             break;
                         }
                         case 5: {
-                            // dùng hàm tính năng tính toán
-                            cout << "Tinh nang tinh toan";
+                            tinh_nang_tinh_toan(p, m, index_manage, money_in, number_out, count, name_staff_tmp);
                             break;
                         }
                         case 6: {
-                            // dùng hàm tính năng quản lý
-                            cout << "Tinh nang quan ly";
+                            tinh_nang_quan_ly(p, count, m, total_money, money_in, money_out, number_in, number_out, index_staff, staff);
                             break;
                         }
                         default:
