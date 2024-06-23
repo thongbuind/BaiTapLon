@@ -23,6 +23,7 @@ struct manage {
 // Khai báo các hàm của Thông
 void menu_0();
 void menu_main();
+void menu_6 (int);
 void yesno_question(string, int&);
 int change_input_main (string);
 // Làm cho zui
