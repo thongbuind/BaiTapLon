@@ -95,6 +95,15 @@ int main() {
                 } while (ynq0==1);
             } else if (option_0 == 2) {
                 break;
+            } else if (option_0 == 3) {
+                cout << "Nhap ten nhan vien: ";
+                cin.ignore();
+                getline(cin, staff[index_staff]);
+                string name_staff_tmp = staff[index_staff];
+                index_staff+=1;
+                // ///////////////////////////////////////////////////////////////
+                nidai_assistant(p, count, money_out, money_in, m, index_manage, name_staff_tmp, number_in, number_out);
+                // ///////////////////////////////////////////////////////////////
             } else {
                 cout << "❌Khong xac dinh duoc lenh, vui long nhap lai." << endl;
             }
