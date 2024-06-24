@@ -60,13 +60,11 @@ int main() {
                             break;
                         }
                         case 3: {
-                            // dùng hàm tính năng xuất kho
-                            cout << "Tinh nang xuat kho";
+                            tinh_nang_xuat_kho(p, m,index_manage, money_in, number_out, count, name_staff_tmp);
                             break;
                         }
                         case 4: {
-                            // dùng hàm tính năng nhập kho
-                            cout << "Tinh nang nhap kho";
+                            tinh_nang_nhap_kho(p, m,index_manage, money_out, number_in, count, name_staff_tmp);
                             break;
                         }
                         case 5: {

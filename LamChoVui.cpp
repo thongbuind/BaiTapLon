@@ -206,7 +206,7 @@ void nidai_assistant (product p[], int& count, int& money_out, int& money_in, ma
                         }
                     }
                 } while (check_quantity == 0);
-                // dung ham xuat kho
+                xuat_kho(name_regex, quantity, count, p, check_name, money_in, m, index_manage, name_staff_tmp, number_out);
                 cout << setw(50) << right << "🤖ニダイ" << endl;
                 cout << setw(46) << right << "Xuat kho thanh cong" << endl;
                 cin.ignore();
@@ -241,7 +241,7 @@ void nidai_assistant (product p[], int& count, int& money_out, int& money_in, ma
                             }
                         } while (quantity <= 0 || cin.fail());
                         cin.ignore();
-                        // dung ham nhap kho
+                        nhap_kho(name_regex, quantity, count, p, check_name, money_out, m, index_manage, name_staff_tmp, number_in);
                         cout << setw(50) << right << "🤖ニダイ" << endl;
                         cout << setw(46) << right << "Nhap kho thanh cong" << endl;
                     }
