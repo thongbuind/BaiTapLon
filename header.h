@@ -32,7 +32,10 @@ int check_oders (string);
 int check_yes_no (string);
 void check_regex (string, string, string&);
 // Khai báo các hàm của Thành
-
+void xuat_kho(string, int, int, product[], int&, int&, manage[], int&, string, int&);
+void nhap_kho(string, int, int, product[], int&, int&, manage[], int&, string, int&);
+void tinh_nang_xuat_kho (product[], manage[], int&, int&, int& , int&, string);
+void tinh_nang_nhap_kho (product[], manage[], int&, int&, int&, int&, string);
 // Khai báo các hàm của Long
 void tra_cuu_danh_sach(int, product[]);
 void tra_cuu_vi_tri(string, int, product[], char&, int&, int&);
