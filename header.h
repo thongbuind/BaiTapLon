@@ -3,9 +3,9 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
-#include <regex>
-#include <iomanip>
+#include <vector> // Quan ly mang dong
+#include <regex> // Tim kiem tu khoa cho tro ly ao
+#include <iomanip> // Can le cho bang
 using namespace std;
 
 struct product {
