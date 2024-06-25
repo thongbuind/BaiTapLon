@@ -1,17 +1,15 @@
-#include <iostream>
 #include "header.h"
 
 int main() {
-    manage m[100];
-    struct product p[100] = {
-        {"sach giai tich", 19, 3000},
-        {"sach vat ly", 15, 23000},
-        {"sach tin hoc", 17, 20000},
-        {"cap sach", 16, 300000},
-        {"ao dong phuc", 61, 150000},
-        {"quan dong phuc", 61, 110000},
-        {"may chieu", 7, 1100000}
-    };
+    vector<product> p;
+    vector<manage> m;
+    p.push_back({"sach giai tich", 19, 30000});
+    p.push_back({"sach vat ly", 15, 23000});
+    p.push_back({"sach tin hoc", 17, 20000});
+    p.push_back({"cap sach", 16, 300000});
+    p.push_back({"ao dong phuc", 61, 150000});
+    p.push_back({"quan dong phuc", 61, 110000});
+    p.push_back({"may chieu", 7, 1100000});
     int count = 7;
     int index_manage = 0;
     int number_in = 0;

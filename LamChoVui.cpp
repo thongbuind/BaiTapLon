@@ -1,6 +1,6 @@
 #include "header.h"
 
-void nidai_assistant (product p[], int& count, int& money_out, int& money_in, manage m[], int& index_manage, string name_staff_tmp, int& number_in, int& number_out) {
+void nidai_assistant (vector<product>& p, int& count, int& money_out, int& money_in, vector<manage>& m, int& index_manage, string name_staff_tmp, int& number_in, int& number_out) {
     // tương tự trên nhưng giao tiếp 1 cách thoải mái hơn
     string oders;
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
