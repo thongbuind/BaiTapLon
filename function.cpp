@@ -54,7 +54,7 @@ int change_input_main (string input) {
     return option;
 }
 
-void tra_cuu_danh_sach (int count, product p[]) {
+void tra_cuu_danh_sach (int count, vector<product> p) {
     cout << "      Tong mat hang: " << count << endl;
     cout << "  |STT|    TEN MAT HANG    |SO LUONG|GIA TIEN|" << endl;
     for (int i=0; i<count; i++) {
@@ -62,7 +62,7 @@ void tra_cuu_danh_sach (int count, product p[]) {
     }
 }
 
-void tra_cuu_vi_tri (string name, int count, product p[], char& y, int& x, int& check) {
+void tra_cuu_vi_tri (string name, int count, vector<product> p, char& y, int& x, int& check) {
     for (int i=0; i<count; i++) {
         if (name == p[i].name) {
             if (p[i].price<100000) {
@@ -88,7 +88,7 @@ void tra_cuu_vi_tri (string name, int count, product p[], char& y, int& x, int& 
     }
 }
 
-void tinh_nang_tra_cuu (product p[], int& count) {
+void tinh_nang_tra_cuu (vector<product>& p, int& count) {
     int q;
     // hiển thị menu cho người dùng chọn
     cout << "   Ban muon tra cuu gi? " << endl;
@@ -124,16 +124,16 @@ void tinh_nang_tra_cuu (product p[], int& count) {
     }
 }
 
-void them (string name, int quantity_add, int price, int& count, product p[], int& check, int& money_out, manage m[], int& index_manage, string name_staff_tmp, int& number_in) {
-    p[count] = {name, quantity_add, price};
+void them (string name, int quantity_add, int price, int& count, vector<product>& p, int& check, int& money_out, vector<manage>& m, int& index_manage, string name_staff_tmp, int& number_in) {
+    p.push_back({name, quantity_add, price});
     count+=1;
     money_out += price * quantity_add;
-    m[index_manage] = {name, quantity_add, name_staff_tmp};
-    index_manage++;
+    m.push_back({name, quantity_add, name_staff_tmp});
     number_in++;
+    index_manage++;
 }
 
-void tinh_nang_them (product p[], manage m[], int& index_manage, int& number_in, int& money_out, int& count, string name_staff_tmp) {
+void tinh_nang_them (vector<product>& p, vector<manage>& m, int& index_manage, int& number_in, int& money_out, int& count, string name_staff_tmp) {
     string name_add;
     int quantity_add;
     int price;
@@ -193,7 +193,7 @@ void tinh_nang_them (product p[], manage m[], int& index_manage, int& number_in,
     }
 }
 
-int tinh_toan (string name[], int quantity[], int index, int count, product p[]) {
+int tinh_toan (string name[], int quantity[], int index, int count, vector<product>& p) {
     int sum=0;
     for (int i=0; i<index; i++){
         for (int j=0; j<count; j++) {
@@ -205,7 +205,7 @@ int tinh_toan (string name[], int quantity[], int index, int count, product p[])
     return sum;
 }
 
-void tinh_nang_tinh_toan (product p[], manage m[], int& index_manage, int& money_in, int& number_out, int& count, string name_staff_tmp) {
+void tinh_nang_tinh_toan (vector<product>& p, vector<manage>& m, int& index_manage, int& money_in, int& number_out, int& count, string name_staff_tmp) {
     int index;
     int checkcheck;
     string q;
@@ -273,7 +273,7 @@ void tinh_nang_tinh_toan (product p[], manage m[], int& index_manage, int& money
     } while (ynq==3);
 }
 
-void tinh_nang_quan_ly (product p[], int count, manage m[], int& total_money, int& money_in, int& money_out, int& number_in, int& number_out, int& index_staff, string staff[]) {
+void tinh_nang_quan_ly (vector<product>& p, int count, vector<manage>& m, int& total_money, int& money_in, int& money_out, int& number_in, int& number_out, int& index_staff, string staff[]) {
     // check xem nhân viên có được cấp quyền truy cập tính năng không
     if (staff[index_staff-1] == "quanly") {
         int option_6;
@@ -410,7 +410,7 @@ void tinh_nang_quan_ly (product p[], int count, manage m[], int& total_money, in
     }
 }
 
-void xuat_kho (string name, int quantity_out, int count, product p[], int& check, int& money_in, manage m[], int& index_manage, string name_staff_tmp, int& number_out) {
+void xuat_kho (string name, int quantity_out, int count, vector<product>& p, int& check, int& money_in, vector<manage>& m, int& index_manage, string name_staff_tmp, int& number_out) {
     for (int i=0; i<count; i++) {
         if (name == p[i].name ) {
             if (p[i].quantity >= quantity_out) {
@@ -427,7 +427,7 @@ void xuat_kho (string name, int quantity_out, int count, product p[], int& check
     }
 }
 
-void nhap_kho (string name, int quantity_in, int count, product p[], int& check, int& money_out, manage m[], int& index_manage, string name_staff_tmp, int& number_in) {
+void nhap_kho (string name, int quantity_in, int count, vector<product>& p, int& check, int& money_out, vector<manage>& m, int& index_manage, string name_staff_tmp, int& number_in) {
     for (int i=0; i<count; i++) {
         if (name == p[i].name) {
             p[i].quantity = p[i].quantity + quantity_in;
@@ -441,7 +441,7 @@ void nhap_kho (string name, int quantity_in, int count, product p[], int& check,
     }
 }
 
-void tinh_nang_xuat_kho (product p[], manage m[], int& index_manage, int& money_in, int& number_out,int& count, string name_staff_tmp) {
+void tinh_nang_xuat_kho (vector<product>& p, vector<manage>& m, int& index_manage, int& money_in, int& number_out,int& count, string name_staff_tmp) {
     string name_out;
     int quantity_out;
     int check=0;
@@ -468,7 +468,7 @@ void tinh_nang_xuat_kho (product p[], manage m[], int& index_manage, int& money_
     }
 }
 
-void tinh_nang_nhap_kho (product p[], manage m[], int& index_manage, int& money_out, int& number_in, int& count, string name_staff_tmp) {
+void tinh_nang_nhap_kho (vector<product>& p, vector<manage>& m, int& index_manage, int& money_out, int& number_in, int& count, string name_staff_tmp) {
     string name_in;
     int quantity_in;
     int check=0;
@@ -517,3 +517,4 @@ void tinh_nang_nhap_kho (product p[], manage m[], int& index_manage, int& money_
         } while (ynq!=0 && ynq!=1);
     }
 }
+
