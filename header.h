@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 #include <vector> // Quan ly mang dong
-#include <regex> // Tim kiem tu khoa cho tro ly ao
 #include <iomanip> // Can le cho bang
+#include <regex> // Tim kiem tu khoa cho tro ly ao
 using namespace std;
 
 struct product {
