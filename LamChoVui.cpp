@@ -1,6 +1,6 @@
 #include "header.h"
 
-void nidai_assistant (vector<product>& p, int& count, int& money_out, int& money_in, vector<manage>& m, int& index_manage, string name_staff_tmp, int& number_in, int& number_out) {
+void nidai_assistant (vector<product>& p, int& count, int& money_out, int& money_in, vector<manage>& m, string name_staff_tmp, int& number_in, int& number_out) {
     // tương tự trên nhưng giao tiếp 1 cách thoải mái hơn
     string oders;
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
@@ -137,7 +137,7 @@ void nidai_assistant (vector<product>& p, int& count, int& money_out, int& money
                         }
                     } while (price <= 0 || cin.fail());
                     cin.ignore(100, '\n');
-                    them(name, quantity, price, count, p, check_them_kho, money_out, m, index_manage, name_staff_tmp, number_in);
+                    them(name, quantity, price, count, p, check_them_kho, money_out, m, name_staff_tmp, number_in);
                     cout << setw(50) << right << "🤖ニダイ" << endl;
                     cout << setw(46) << right << "San pham da duoc them vao kho" << endl;
                 }
@@ -206,7 +206,7 @@ void nidai_assistant (vector<product>& p, int& count, int& money_out, int& money
                         }
                     }
                 } while (check_quantity == 0);
-                xuat_kho(name_regex, quantity, count, p, check_name, money_in, m, index_manage, name_staff_tmp, number_out);
+                xuat_kho(name_regex, quantity, count, p, check_name, money_in, m, name_staff_tmp, number_out);
                 cout << setw(50) << right << "🤖ニダイ" << endl;
                 cout << setw(46) << right << "Xuat kho thanh cong" << endl;
                 cin.ignore();
@@ -241,7 +241,7 @@ void nidai_assistant (vector<product>& p, int& count, int& money_out, int& money
                             }
                         } while (quantity <= 0 || cin.fail());
                         cin.ignore();
-                        nhap_kho(name_regex, quantity, count, p, check_name, money_out, m, index_manage, name_staff_tmp, number_in);
+                        nhap_kho(name_regex, quantity, count, p, check_name, money_out, m, name_staff_tmp, number_in);
                         cout << setw(50) << right << "🤖ニダイ" << endl;
                         cout << setw(46) << right << "Nhap kho thanh cong" << endl;
                     }
@@ -287,7 +287,7 @@ void nidai_assistant (vector<product>& p, int& count, int& money_out, int& money
                                 }
                             } while (quantity <= 0 || cin.fail());
                             cin.ignore();
-                            them(name_regex, quantity, price, count, p, check_name, money_out, m, index_manage, name_staff_tmp, number_in);
+                            them(name_regex, quantity, price, count, p, check_name, money_out, m, name_staff_tmp, number_in);
                             cout << setw(50) << right << "🤖ニダイ" << endl;
                             cout << setw(46) << right << "Them moi thanh cong" << endl;
                         } else if (check_yes_no(q) == 0) {

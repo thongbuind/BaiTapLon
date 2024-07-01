@@ -70,16 +70,15 @@ void tinh_nang_tra_cuu (vector<product>& p, int& count) {
     }
 }
 
-void them (string name, int quantity_add, int price, int& count, vector<product>& p, int& check, int& money_out, vector<manage>& m, int& index_manage, string name_staff_tmp, int& number_in) {
+void them (string name, int quantity_add, int price, int& count, vector<product>& p, int& check, int& money_out, vector<manage>& m, string name_staff_tmp, int& number_in) {
     p.push_back({name, quantity_add, price});
     count+=1;
     money_out += price * quantity_add;
     m.push_back({name, quantity_add, name_staff_tmp});
     number_in++;
-    index_manage++;
 }
 
-void tinh_nang_them (vector<product>& p, vector<manage>& m, int& index_manage, int& number_in, int& money_out, int& count, string name_staff_tmp) {
+void tinh_nang_them (vector<product>& p, vector<manage>& m, int& number_in, int& money_out, int& count, string name_staff_tmp) {
     string name_add;
     int quantity_add;
     int price;
@@ -118,7 +117,7 @@ void tinh_nang_them (vector<product>& p, vector<manage>& m, int& index_manage, i
                 cin >> q;
                 yesno_question(q, ynq);
                 if (ynq==1) {
-                    nhap_kho(name_add, quantity_add, count, p, check, money_out, m, index_manage, name_staff_tmp, number_in);
+                    nhap_kho(name_add, quantity_add, count, p, check, money_out, m, name_staff_tmp, number_in);
                 }
                 checkcheck=1;
             } while (ynq!=0 && ynq!=1);
@@ -127,7 +126,7 @@ void tinh_nang_them (vector<product>& p, vector<manage>& m, int& index_manage, i
     }
     // nếu chưa có trong kho thì thêm vào
     if (checkcheck==0) {
-        them(name_add, quantity_add, price, count, p, check, money_out, m, index_manage, name_staff_tmp, number_in);
+        them(name_add, quantity_add, price, count, p, check, money_out, m, name_staff_tmp, number_in);
     }
     if (count > tmp) {
         check=1;

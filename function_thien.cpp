@@ -12,7 +12,7 @@ int tinh_toan (string name[], int quantity[], int index, int count, vector<produ
     return sum;
 }
 
-void tinh_nang_tinh_toan (vector<product>& p, vector<manage>& m, int& index_manage, int& money_in, int& number_out, int& count, string name_staff_tmp) {
+void tinh_nang_tinh_toan (vector<product>& p, vector<manage>& m, int& money_in, int& number_out, int& count, string name_staff_tmp) {
     int index;
     int checkcheck;
     string q;
@@ -78,7 +78,7 @@ void tinh_nang_tinh_toan (vector<product>& p, vector<manage>& m, int& index_mana
         yesno_question(q, ynq);
         if (ynq==1) {
             for (int i=0; i<index; i++) {
-                xuat_kho(name[i], quantity[i], count, p, checkcheck, money_in, m, index_manage, name_staff_tmp, number_out);
+                xuat_kho(name[i], quantity[i], count, p, checkcheck, money_in, m, name_staff_tmp, number_out);
             }
             cout << "   ✅Xuat kho thanh cong." << endl;
         } else if (ynq==3) {

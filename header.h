@@ -30,19 +30,19 @@ int change_input_main (string);
 void tra_cuu_danh_sach(int, vector<product>);
 void tra_cuu_vi_tri(string, int, vector<product>, char&, int&, int&);
 void tinh_nang_tra_cuu (vector<product>&, int&);
-void them(string, int, int, int&, vector<product>&, int&, int&, vector<manage>&, int&, string, int&);
-void tinh_nang_them (vector<product>&, vector<manage>&, int&, int&, int&, int&, string);
+void them (string, int, int, int&, vector<product>&, int&, int&, vector<manage>&, string, int&);
+void tinh_nang_them (vector<product>&, vector<manage>&, int&, int&, int&, string);
 // Khai bao cac ham của Thanh
-void xuat_kho(string, int, int, vector<product>&, int&, int&, vector<manage>&, int&, string, int&);
-void nhap_kho(string, int, int, vector<product>&, int&, int&, vector<manage>&, int&, string, int&);
-void tinh_nang_xuat_kho (vector<product>&, vector<manage>&, int&, int&, int& , int&, string);
-void tinh_nang_nhap_kho (vector<product>&, vector<manage>&, int&, int&, int&, int&, string);
+void xuat_kho(string, int, int, vector<product>&, int&, int&, vector<manage>&, string, int&);
+void nhap_kho(string, int, int, vector<product>&, int&, int&, vector<manage>&, string, int&);
+void tinh_nang_xuat_kho (vector<product>&, vector<manage>&, int&, int& , int&, string);
+void tinh_nang_nhap_kho (vector<product>&, vector<manage>&, int&, int&, int&, string);
 // Khai bao cac ham cua Thien
 int tinh_toan(string[], int[], int, int, vector<product>&);
-void tinh_nang_tinh_toan (vector<product>&, vector<manage>&, int&, int&, int&, int&, string);
+void tinh_nang_tinh_toan (vector<product>&, vector<manage>&, int&, int&, int&, string);
 void tinh_nang_quan_ly (vector<product>&, int, vector<manage>&, int&, int&, int&, int&, int&, int&, string[]);
 // Lam cho zui
-void nidai_assistant (vector<product>&, int&, int&, int&, vector<manage>&, int&, string, int&, int&);
+void nidai_assistant (vector<product>&, int&, int&, int&, vector<manage>&, string, int&, int&);
 int check_oders (string);
 int check_yes_no (string);
 void check_regex (string, string, string&);

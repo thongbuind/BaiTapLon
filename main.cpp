@@ -11,7 +11,6 @@ int main() {
     p.push_back({"quan dong phuc", 61, 110000});
     p.push_back({"may chieu", 7, 1100000});
     int count = 7;
-    int index_manage = 0;
     int number_in = 0;
     int number_out = 0;
     int total_money = 10000000;
@@ -54,19 +53,19 @@ int main() {
                             break;
                         }
                         case 2: {
-                            tinh_nang_them(p, m, index_manage, number_in, money_out, count, name_staff_tmp);
+                            tinh_nang_them(p, m, number_in, money_out, count, name_staff_tmp);
                             break;
                         }
                         case 3: {
-                            tinh_nang_xuat_kho(p, m,index_manage, money_in, number_out, count, name_staff_tmp);
+                            tinh_nang_xuat_kho(p, m, money_in, number_out, count, name_staff_tmp);
                             break;
                         }
                         case 4: {
-                            tinh_nang_nhap_kho(p, m,index_manage, money_out, number_in, count, name_staff_tmp);
+                            tinh_nang_nhap_kho(p, m, money_out, number_in, count, name_staff_tmp);
                             break;
                         }
                         case 5: {
-                            tinh_nang_tinh_toan(p, m, index_manage, money_in, number_out, count, name_staff_tmp);
+                            tinh_nang_tinh_toan(p, m, money_in, number_out, count, name_staff_tmp);
                             break;
                         }
                         case 6: {
@@ -95,7 +94,7 @@ int main() {
                 string name_staff_tmp = staff[index_staff];
                 index_staff+=1;
                 // ///////////////////////////////////////////////////////////////
-                nidai_assistant(p, count, money_out, money_in, m, index_manage, name_staff_tmp, number_in, number_out);
+                nidai_assistant(p, count, money_out, money_in, m, name_staff_tmp, number_in, number_out);
                 // ///////////////////////////////////////////////////////////////
             } else {
                 cout << "❌Khong xac dinh duoc lenh, vui long nhap lai." << endl;
