@@ -31,37 +31,44 @@ void tinh_nang_tinh_toan (vector<product>& p, vector<manage>& m, int& index_mana
     int check[index];
     int ynq;
     for (int i=0; i<index; i++) {
-        // dùng vòng do while để nhập và check tên sp
+        check[i] = 0;
+        // Vong do while de nhap ten
+        cin.ignore();
         do {
             cout << "   Nhap ten mat hang " << i+1 << ": ";
-            cin.ignore();
             getline(cin, name[i]);
             for (int j=0; j<count; j++) {
                 if (name[i] == p[j].name) {
-                        check[i] = 1;
+                    check[i] = 1;
                 }
             }
-            // dùng vòng do while để nhập số lượng
-            do {
-                cout << "   Nhap so luong cua mat hang " << i+1 << ": ";
-                cin >> quantity[i];
-                if (cin.fail()) {
-                    cin.clear();
-                    cin.ignore(100, '\n');
-                }
-                // kiểm tra số lượng có đủ trong kho không
-                if (!cin.fail()) {
-                    for (int j=0; j<count; j++) {
-                        if (name[i] == p[j].name) {
-                            if (quantity[i] > p[j].quantity) {
-                                check[i] = 0;
-                                cout << "   ❌So luong san pham khong du trong kho." << endl;
-                            }
+            if (check[i] != 1) {
+                cout << "   San pham khong co trong kho, vui long nhap lai." << endl;
+            }
+        } while (check[i] != 1);
+        // Vong do while de nhap so luong san pham
+        do {
+            check[i] = 1;
+            cout << "   Nhap so luong cua mat hang " << i+1 << ": ";
+            cin >> quantity[i];
+            if (quantity[i] <= 0) {
+                cout << "   So luong san pham phai lon hon 0." << endl;
+                check[i] = 0;
+            }
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(100, '\n');
+            } else {
+                for (int j=0; j<count; j++) {
+                    if (name[i] == p[j].name) {
+                        if (quantity[i] > p[j].quantity) {
+                            check[i] = 0;
+                            cout << "   ❌So luong san pham khong du trong kho." << endl;
                         }
                     }
                 }
-            } while (quantity[i] <= 0 || cin.fail());
-        } while (check[i]!=1);
+            }
+        } while (check[i] != 1 || cin.fail());
     }
     cout << "   Thanh tien: " << tinh_toan(name, quantity, index, count, p) << " VND" << endl;
     // hỏi xem muốn xuất kho những sản phẩm trên không
