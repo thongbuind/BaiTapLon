@@ -2,7 +2,7 @@
 
 void nidai_assistant (vector<product>& p, int& count, int& money_out, int& money_in, vector<manage>& m, string name_staff_tmp, int& number_in, int& number_out) {
     // tương tự trên nhưng giao tiếp 1 cách thoải mái hơn
-    string oders;
+    string orders;
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
     cout << setw(50) << right << "🤖ニダイ" << endl;
     cout << "Xin chao, toi la ニダイ assistant, rat han hanh" << endl;
@@ -11,9 +11,9 @@ void nidai_assistant (vector<product>& p, int& count, int& money_out, int& money
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
     do {
         cout << "You: ";
-        getline(cin, oders);
-        check_oders(oders);
-        switch (check_oders(oders)) {
+        getline(cin, orders);
+        check_orders(orders);
+        switch (check_orders(orders)) {
             case 0:
                 cout << setw(50) << right << "🤖ニダイ" << endl;
                 cout << setw(46) << right << "Toi chua hieu y ban cho lam" << endl;
@@ -401,15 +401,15 @@ void nidai_assistant (vector<product>& p, int& count, int& money_out, int& money
                 cout << "Khong xac dinh duoc lenh." << endl;
                 break;
         }
-        if (check_oders(oders) != 3 && check_oders(oders) != 10 && check_oders(oders) != 0 && check_oders(oders) != 8) {
+        if (check_orders(orders) != 3 && check_orders(orders) != 10 && check_orders(orders) != 0 && check_orders(orders) != 8) {
             cout << setw(50) << right << "🤖ニダイ" << endl;
             cout << setw(46) << right << "Ban co muon toi giup" << endl;
             cout << setw(46) << right << "them gi nua khong?" << endl;
         }
-    } while (check_oders(oders) != 10);
+    } while (check_orders(orders) != 10);
 }
 
-int check_oders (string oders) {
+int check_orders (string oders) {
     regex tra_cuu ("tra cuu");
     regex kiem_tra ("kiem tra");
     regex danh_sach ("danh sach");

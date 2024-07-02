@@ -43,7 +43,7 @@ void tinh_nang_tinh_toan (vector<product>&, vector<manage>&, int&, int&, int&, s
 void tinh_nang_quan_ly (vector<product>&, int, vector<manage>&, int&, int&, int&, int&, int&, int&, string[]);
 // Lam cho zui
 void nidai_assistant (vector<product>&, int&, int&, int&, vector<manage>&, string, int&, int&);
-int check_oders (string);
+int check_orders (string);
 int check_yes_no (string);
 void check_regex (string, string, string&);
 
